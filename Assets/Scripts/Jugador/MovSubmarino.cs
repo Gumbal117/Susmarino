@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class MovSubmarino : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    [SerializeField] private float gira;
+    [SerializeField] private float velocidadDeGiro;
+   
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        gira = Input.GetAxis("Horizontal");
+        Mathf.Clamp(velocidadDeGiro, -127, 127);
+        velocidadDeGiro = velocidadDeGiro * gira * 127;
+         
+        transform.Rotate(0,0,velocidadDeGiro,Space.World);
     }
 }
