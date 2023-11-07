@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.VFX;
 
 public class Bala : MonoBehaviour
 {
-    [SerializeField] public Rigidbody2D rigidbody2DBala;
-    [SerializeField] public float velocidad;
-    [SerializeField] public float dañoBala=1;
+    private Rigidbody2D rigidbody2DBala;
+    private float velocidad;
+    private float dañoBala=1;
     private void Awake()
     {
+        rigidbody2DBala=GetComponent<Rigidbody2D>();    
         velocidad = Arma.velocidadBalas;
         dañoBala = Arma.danoBalas;
     }
-    public void DispararBala()
+    public void DispararBala(Transform dir)
     {
-        rigidbody2DBala.AddForce(Vector2.up* velocidad, ForceMode2D.Impulse);
+        transform.rotation = dir.rotation;
+        rigidbody2DBala.AddForce( transform.up * velocidad, ForceMode2D.Impulse);
     }
     private void OnBecameInvisible()
     {

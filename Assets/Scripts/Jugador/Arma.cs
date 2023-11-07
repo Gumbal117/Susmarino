@@ -21,7 +21,6 @@ public class Arma : PoolManager
     void Update()
     {
         //Disparar
-
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space))
         {
             if (ultimoDisparo < Time.time)
@@ -37,7 +36,7 @@ public class Arma : PoolManager
         Objeto.transform.position = transform.position;
         Objeto.transform.rotation = jugador.rotation;
         Objeto.SetActive(true);
-        Objeto.GetComponent<Bala>().DispararBala();
+        Objeto.GetComponent<Bala>().DispararBala(jugador);
 
         return Objeto;
     }

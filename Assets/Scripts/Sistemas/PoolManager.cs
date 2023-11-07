@@ -10,9 +10,7 @@ public class PoolManager : MonoBehaviour
     private void Awake()
     {
         objetosCreados = new List<GameObject>();
-
     }
-    
     public virtual GameObject PedirObjeto()
     {
         for (int i = 0; i < objetosCreados.Count; i++)
