@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343547350}
   - component: {fileID: 343547351}
+  - component: {fileID: 343547352}
   m_Layer: 0
   m_Name: Arma
   m_TagString: Untagged
@@ -169,6 +170,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objeto: {fileID: 8341604198962931303, guid: 5e891b2e28042a542ad13f4e70c06264, type: 3}
   objetosCreados: []
+  cadenciaBalas: 0.25
+  ultimoDisparo: 0
+  jugador: {fileID: 1122344845}
+--- !u!114 &343547352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343547349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5918daa1737255e418291858ba9320fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 7411181074904348154, guid: aa6728ce7a18d9e43bbc365b95649275, type: 3}
+  objetosCreados: []
+  cadenciaBombas: 1.5
+  bombasCooldown: 0
+  ultimoDisparoBomba: 0
   jugador: {fileID: 1122344845}
 --- !u!1 &519420028
 GameObject:

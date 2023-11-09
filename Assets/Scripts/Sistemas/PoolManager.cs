@@ -24,34 +24,11 @@ public class PoolManager : MonoBehaviour
         objetosCreados.Add(nuevo);
         return nuevo;
     }
-    public virtual GameObject PedirObjetoConVector(Vector2 a)
-    {
-        for (int i = 0; i < objetosCreados.Count; i++)
-        {
-            if (!objetosCreados[i].activeInHierarchy)
-            {
-                return objetosCreados[i];
-            }
-        }
-        GameObject nuevo = CrearObjeto();
-        objetosCreados.Add(nuevo);
-        return nuevo;
-    }
-    public virtual GameObject PedirObjetoConint(int a)
-    {
-        for (int i = 0; i < objetosCreados.Count; i++)
-        {
-            if (!objetosCreados[i].activeInHierarchy)
-            {
-                return objetosCreados[i];
-            }
-        }
-        GameObject nuevo = CrearObjeto();
-        objetosCreados.Add(nuevo);
-        return nuevo;
-    }
-    public GameObject CrearObjeto() 
+   
+
+    public GameObject CrearObjeto()
     {
         return Instantiate(objeto);
     }
+   
 }

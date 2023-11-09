@@ -5,14 +5,19 @@ using UnityEngine;
 public class Arma : PoolManager
 {
     //Cadencia
-    public static float cadenciaBalas = 0.25f;
+    public float cadenciaBalas = 0.25f;
+
     //Velocidad
-    public static float velocidadBalas = 20f;
+    [SerializeField] public static float velocidadBalas = 20f;
+
     //Dano
-    public static float danoBalas = 15f;
-    private float ultimoDisparo;
+    [SerializeField] public static float danoBalas = 15f;
+
     //Disparo
-    [SerializeField]Transform jugador;
+    [SerializeField] private float ultimoDisparo;
+
+    [SerializeField] Transform jugador;
+   
     private void Awake()
     {
         ultimoDisparo = Time.time;
@@ -21,7 +26,7 @@ public class Arma : PoolManager
     void Update()
     {
         //Disparar
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space)) /////////////////////////////////////////////////////////////////
         {
             if (ultimoDisparo < Time.time)
             {
@@ -40,4 +45,5 @@ public class Arma : PoolManager
 
         return Objeto;
     }
+    
 }
