@@ -6,19 +6,18 @@ using UnityEngine.VFX;
 
 public class Bala : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2DBala;
-    private float velocidad;
-    private float dañoBala=1;
+    private Rigidbody2D rigidbody2D;
+    [SerializeField] private float velocidad;
+    [SerializeField] private float daño;
     private void Awake()
     {
-        rigidbody2DBala=GetComponent<Rigidbody2D>();    
-        velocidad = Arma.velocidadBalas;
-        dañoBala = Arma.danoBalas;
+        rigidbody2D=GetComponent<Rigidbody2D>();    
+        
     }
-    public void DispararBala(Transform dir)
+    public void Disparar(Transform dir)
     {
         transform.rotation = dir.rotation;
-        rigidbody2DBala.AddForce( transform.up * velocidad, ForceMode2D.Impulse);
+        rigidbody2D.AddForce( transform.up * velocidad, ForceMode2D.Impulse);
     }
     private void OnBecameInvisible()
     {

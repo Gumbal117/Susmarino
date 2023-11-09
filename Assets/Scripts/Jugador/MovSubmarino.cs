@@ -17,8 +17,8 @@ public class MovSubmarino : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gira = Input.GetAxis("Horizontal");
-        mueve = Input.GetAxis("Vertical");
+        gira = Input.GetAxis("Horizontal");//////////////////////////////////////////////
+        mueve = Input.GetAxis("Vertical");//////////////////////////////////////////////
         
         vGiro =   gira * Time.deltaTime * velocidadDeGiro;
         vMov =   mueve * Time.deltaTime * velocidadDeMov;

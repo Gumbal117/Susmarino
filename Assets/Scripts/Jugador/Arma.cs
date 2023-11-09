@@ -5,35 +5,32 @@ using UnityEngine;
 public class Arma : PoolManager
 {
     //Cadencia
-    public float cadenciaBalas = 0.25f;
-
-    //Velocidad
-    [SerializeField] public static float velocidadBalas = 20f;
-
-    //Dano
-    [SerializeField] public static float danoBalas = 15f;
-
+    public float cadencia = 0.25f;
     //Disparo
     [SerializeField] private float ultimoDisparo;
-
+    public float cooldown;
     [SerializeField] Transform jugador;
-   
+    [SerializeField] KeyCode kya;
+
     private void Awake()
     {
         ultimoDisparo = Time.time;
     }
-    // Update is called once per frame
     void Update()
     {
         //Disparar
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space)) /////////////////////////////////////////////////////////////////
+        if (Input.GetKey(kya)) /////////////////////////////////////////////////////////////////
         {
             if (ultimoDisparo < Time.time)
             {
-                ultimoDisparo = Time.time + cadenciaBalas;
+                ultimoDisparo = Time.time + cadencia;
                 PedirObjeto();
+                cooldown = 0;
             }
         }
+
+        cooldown += Time.deltaTime;
+        cooldown = Mathf.Clamp(cooldown, 0, cadencia);
     }
     public override GameObject PedirObjeto()
     {
@@ -41,7 +38,7 @@ public class Arma : PoolManager
         Objeto.transform.position = transform.position;
         Objeto.transform.rotation = jugador.rotation;
         Objeto.SetActive(true);
-        Objeto.GetComponent<Bala>().DispararBala(jugador);
+        Objeto.GetComponent<Bala>().Disparar(jugador);
 
         return Objeto;
     }
