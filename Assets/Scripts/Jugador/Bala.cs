@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 
 public class Bala : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
     [SerializeField] private float velocidad;
     [SerializeField] private float daño;
     private void Awake()
