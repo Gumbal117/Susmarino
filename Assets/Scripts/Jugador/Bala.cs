@@ -9,10 +9,10 @@ public class Bala : MonoBehaviour
     private new Rigidbody2D rigidbody2D;
     [SerializeField] private float velocidad;
     [SerializeField] private float daño;
+    [SerializeField] private float tiempoDeDesaparecer;
     private void Awake()
     {
-        rigidbody2D=GetComponent<Rigidbody2D>();    
-        
+        rigidbody2D=GetComponent<Rigidbody2D>();
     }
     public void Disparar(Transform dir)
     {
@@ -21,20 +21,20 @@ public class Bala : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
+        if (gameObject != null) 
+        {
+            StartCoroutine(TiempoDeDesaparecer());
+        }
+        
+    }
+    private IEnumerator TiempoDeDesaparecer()
+    {
+        yield return new WaitForSeconds(tiempoDeDesaparecer);
         gameObject.SetActive(false);
     }
-    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Destructible>() != null)
-        {
-
-            gameObject.SetActive(false);
-            collision.GetComponent<Destructible>().QuitarVida(dañoBala);
-
-        }
-       
+        
     }
 
-    */
 }
