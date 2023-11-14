@@ -8,6 +8,7 @@ public class Radar : PoolManager
     [SerializeField] private Transform[] enemigos;
     [SerializeField] private Transform radar;
     [SerializeField] private GameObject enemyIcon;
+    [SerializeField] private Spawn spawn;
 
     [SerializeField] private List<Transform> enemyIcons;
 
@@ -16,10 +17,15 @@ public class Radar : PoolManager
 
     void Start()
     {
+        enemyIcons = new List<Transform>();
         CreateEnemyIcons();
     }
     void Update()
     {
+        for (int i = 0; i < spawn.numEnemigos; i++)
+        {
+
+        }
         UpdateRadarPos();
     }
     void CreateEnemyIcons()
@@ -28,10 +34,9 @@ public class Radar : PoolManager
         {
             PedirObjetoHijo(radar);
         }
-        enemyIcons = new List<Transform>();
+        
         for (int i = 0; i < objetosCreados.Count; i++)
         {
-
             enemyIcons.Add(objetosCreados[i].transform);
         }
     }

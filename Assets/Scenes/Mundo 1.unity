@@ -171,10 +171,10 @@ MonoBehaviour:
   objeto: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
   objetosCreados: []
   jugador: {fileID: 1122344845}
-  enemigos:
-  - {fileID: 1541480120}
+  enemigos: []
   radar: {fileID: 916465903}
   enemyIcon: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
+  spawn: {fileID: 1076520300}
   enemyIcons: []
   maxDistance: 80
   radarScale: 2
@@ -572,6 +572,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 217264943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1076520299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076520301}
+  - component: {fileID: 1076520300}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1076520300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076520299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e015b676b6bbf648b510b53afcc00ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numEnemigos: 1
+  enemys: []
+--- !u!4 &1076520301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076520299}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.09925, y: -8.256455, z: -0.026516557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1541480120}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122344844
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +825,7 @@ GameObject:
   - component: {fileID: 1541480118}
   m_Layer: 0
   m_Name: pixil-frame-0 (3)_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -865,15 +912,15 @@ Transform:
   m_GameObject: {fileID: 1541480117}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.40182427, w: 0.9157169}
-  m_LocalPosition: {x: -15.72, y: -4.91, z: 0}
+  m_LocalPosition: {x: -6.6207504, y: 3.3464556, z: 0.026516557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1076520301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -47.385}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1122344845}
-  - {fileID: 1541480120}
+  - {fileID: 1076520301}
