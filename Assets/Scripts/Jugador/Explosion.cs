@@ -12,6 +12,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float tiempodeExplotar;
     [SerializeField] private int numExplosion;
     private bool explotando;
+    [SerializeField] private AudioSource sondioExplosion;
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class Explosion : MonoBehaviour
                 rigidbody2Dbomba.velocity = Vector2.zero;
                 circleCollider.enabled = true;
                 luz.SetActive(true);
+                sondioExplosion.Play();
             }
             else
             {
