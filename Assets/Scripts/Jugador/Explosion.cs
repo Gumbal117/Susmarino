@@ -5,21 +5,18 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private ParticleSystem explosion = default;
-    [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private Rigidbody2D rigidbody2Dbomba;
     [SerializeField] private GameObject luz;
-    [SerializeField] private CircleCollider2D circleCollider;
+    [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private float tiempodeExplotar;
     [SerializeField] private int numExplosion;
     private bool explotando;
+    public bool yaExploto;
     [SerializeField] private AudioSource sondioExplosion;
 
     private void Awake()
     {
         explosion = GetComponent<ParticleSystem>();
         sprite = GetComponent<SpriteRenderer>();
-        rigidbody2Dbomba = GetComponent<Rigidbody2D>();
-        circleCollider = GetComponent<CircleCollider2D>();
 
     }
     private void OnEnable()
@@ -27,10 +24,10 @@ public class Explosion : MonoBehaviour
         numExplosion = 0;
         sprite.enabled = true;
         explotando = false;
-        circleCollider.enabled = false;
         luz.SetActive(false);
+        yaExploto=false;
     }
-   
+
     void Update()
     {
         StartCoroutine(TiempodeExplosion());
@@ -42,10 +39,9 @@ public class Explosion : MonoBehaviour
                 sprite.enabled = false;
                 numExplosion=+1;
                 explosion.Play();
-                rigidbody2Dbomba.velocity = Vector2.zero;
-                circleCollider.enabled = true;
                 luz.SetActive(true);
                 sondioExplosion.Play();
+                yaExploto = true;
             }
             else
             {
@@ -54,6 +50,7 @@ public class Explosion : MonoBehaviour
                     explosion.Pause();
                     explosion.Stop();
                     gameObject.SetActive(false);
+                    yaExploto = false;
                 }
             }
         }
@@ -63,11 +60,5 @@ public class Explosion : MonoBehaviour
         yield return new WaitForSeconds(tiempodeExplotar);
         explotando = true;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (circleCollider!= null)
-        {
-            
-        }
-    }
+   
 }

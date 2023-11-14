@@ -30,5 +30,25 @@ public class PoolManager : MonoBehaviour
     {
         return Instantiate(objeto);
     }
-   
+
+    public virtual GameObject PedirObjetoHijo(Transform padre)
+    {
+        for (int i = 0; i < objetosCreados.Count; i++)
+        {
+            if (!objetosCreados[i].activeInHierarchy)
+            {
+                return objetosCreados[i];
+            }
+        }
+        GameObject nuevo = CrearObjetoHijo(padre);
+        objetosCreados.Add(nuevo);
+        return nuevo;
+    }
+
+
+    public GameObject CrearObjetoHijo(Transform padre)
+    {
+        return Instantiate(objeto, padre);
+    }
+
 }

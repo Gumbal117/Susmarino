@@ -123,6 +123,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &217264942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 217264943}
+  - component: {fileID: 217264944}
+  m_Layer: 0
+  m_Name: Radar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &217264943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217264942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 916465903}
+  m_Father: {fileID: 1122344845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217264944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217264942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef63f78e755ee945be940e7aab1e820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
+  objetosCreados: []
+  jugador: {fileID: 1122344845}
+  enemigos:
+  - {fileID: 1541480120}
+  radar: {fileID: 916465903}
+  enemyIcon: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
+  enemyIcons: []
+  maxDistance: 80
+  radarScale: 2
 --- !u!1 &343547349
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 916465903}
   - component: {fileID: 916465902}
-  - component: {fileID: 916465901}
   m_Layer: 0
   m_Name: Radar-Sprite
   m_TagString: Untagged
@@ -451,22 +505,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &916465901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916465900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef63f78e755ee945be940e7aab1e820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jugador: {fileID: 0}
-  enemigos: []
-  maxDistance: 0
-  radarScale: 0
 --- !u!212 &916465902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -532,7 +570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1122344845}
+  m_Father: {fileID: 217264943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122344844
 GameObject:
@@ -569,7 +607,7 @@ Transform:
   - {fileID: 711416611}
   - {fileID: 1379884952}
   - {fileID: 343547350}
-  - {fileID: 916465903}
+  - {fileID: 217264943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1122344846

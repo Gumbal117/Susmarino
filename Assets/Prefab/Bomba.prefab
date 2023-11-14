@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1096388630133895260}
   - component: {fileID: 348990001982115422}
   - component: {fileID: -7485437130909914209}
+  - component: {fileID: 7980983737467621960}
   - component: {fileID: 5401950607328832358}
   - component: {fileID: -7889570091601682749}
   - component: {fileID: 8841357316842192287}
@@ -148,13 +149,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 5401950607328832358}
-  sprite: {fileID: 1045903863584195210}
-  rigidbody2Dbomba: {fileID: 0}
   luz: {fileID: 7908866591815399639}
-  circleCollider: {fileID: 0}
+  sprite: {fileID: 1045903863584195210}
   tiempodeExplotar: 2
   numExplosion: 0
   sondioExplosion: {fileID: 4113452229278924503}
+--- !u!114 &7980983737467621960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411181074904348154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6587f6e4dd81dd429b22e963b50ae5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2Dbomba: {fileID: 0}
+  circleCollider: {fileID: 0}
 --- !u!198 &5401950607328832358
 ParticleSystem:
   m_ObjectHideFlags: 0
