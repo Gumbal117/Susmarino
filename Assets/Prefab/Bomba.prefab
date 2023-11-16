@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 575fe0d0a38724048828c259aaa084d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   sprite: {fileID: 1045903863584195210}
   tiempodeExplotar: 2
   numExplosion: 0
+  yaExploto: 0
   sondioExplosion: {fileID: 4113452229278924503}
 --- !u!114 &7980983737467621960
 MonoBehaviour:

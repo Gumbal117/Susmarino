@@ -28,6 +28,10 @@ public class Radar : PoolManager
         }
         UpdateRadarPos();
     }
+    public void AgregarEnemigo(GameObject enemigoAAgragar)
+    {
+        enemyIcons.Add(enemigoAAgragar.transform);
+    }
     void CreateEnemyIcons()
     {
         for (int i = 0; i < enemigos.Length; i++)

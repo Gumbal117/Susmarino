@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+    public Radar radar;
     public float numEnemigos;
     public GameObject[] enemys;
     // Start is called before the first frame update
@@ -17,8 +18,9 @@ public class Spawn : MonoBehaviour
     {
         for (int i = 0; i < numEnemigos; i++)
         {
-            
+            //radar.AgregarEnemigo(gameobjectdelenemigo);
         }
         
     }
+
 }
