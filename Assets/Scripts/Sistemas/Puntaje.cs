@@ -22,16 +22,7 @@ public class Puntaje : MonoBehaviour
     }
 private void Update()
     {
-        
-        if (score) 
-        {
-            puntos += Time.deltaTime;
-            m_TextMeshProUGUI.text = puntos.ToString("0");
-        }
-        else 
-        {
-            
-        }
+        m_TextMeshProUGUI.text = puntos.ToString("0");
     }
     
     public void SumarPuntos(float puntosdeentrada) 
