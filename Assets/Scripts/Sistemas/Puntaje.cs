@@ -6,27 +6,25 @@ using TMPro;
 public class Puntaje : MonoBehaviour
 {
     public float puntos=0;
-    public bool score = true;
     private TextMeshProUGUI m_TextMeshProUGUI;
-
     private void OnEnable()
     {
-        puntos =0;
-        score = true;
-
+        puntos = 0;
     }
     private void Start()
     {
         m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
-        score = true;
     }
 private void Update()
     {
         m_TextMeshProUGUI.text = puntos.ToString("0");
     }
-    
     public void SumarPuntos(float puntosdeentrada) 
     {
         puntos += puntosdeentrada;
+    }
+    public void HighScore()
+    {
+        AdminPuntaje.instance.AñadirUnNuevoPuntaje(puntos);
     }
 }

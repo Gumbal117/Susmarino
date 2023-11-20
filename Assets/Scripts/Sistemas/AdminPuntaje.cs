@@ -22,17 +22,18 @@ public class AdminPuntaje : MonoBehaviour
             Destroy(gameObject); 
         }
     }
-    private void Update()
-    {
-    }
+    
     public void AñadirUnNuevoPuntaje(float puntos)
     {
         PlayerData playerData = SaveManager.LoadPlayerScore();
+        OrdenarPuntajes();
         for (int i = 0; i < puntosAcumuados.Length; i++)
         {
             if (puntosAcumuados[i]<puntos)
             {
                 puntosAcumuados[i] = puntos;
+                OrdenarPuntajes();
+                return;
             }
         }
         playerData.puntajeAcumulado = puntosAcumuados;
@@ -41,6 +42,8 @@ public class AdminPuntaje : MonoBehaviour
     public void GuardarPuntaje()
     {
         SaveManager.SavePlayerScore(this);
+        Debug.Log("GuardadoExitoso");
+
     }
     public void CargarPuntaje()
     {

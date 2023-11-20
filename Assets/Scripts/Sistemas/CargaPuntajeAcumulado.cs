@@ -20,13 +20,17 @@ public class CargaPuntajeAcumulado : MonoBehaviour
     }
     private void Update()
     {
-        ChecarAdminPuntaje();
-        for (int i = 0; i < puntosAcumuadosEnMEnu.Length; i++)
-        {
-            m_TextMeshProUGUI.text = puntosAcumuadosEnMEnu[i].ToString("0");
-        }
+        
+        
+        m_TextMeshProUGUI.text = puntosAcumuadosEnMEnu[4].ToString("0")+"\n"
+            +puntosAcumuadosEnMEnu[3].ToString("0") + "\n"
+             + puntosAcumuadosEnMEnu[2].ToString("0") + "\n"
+              + puntosAcumuadosEnMEnu[1].ToString("0") + "\n"
+               + puntosAcumuadosEnMEnu[0].ToString("0") + "\n";
+
+        
     }
-    private void ChecarAdminPuntaje()
+    public void ChecarAdminPuntaje()
     {
         if (AdminPuntaje.instance != null)
         {
