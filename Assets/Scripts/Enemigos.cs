@@ -6,6 +6,7 @@ public class Enemigos : MonoBehaviour
 {
     public string objectTag;
     public float speed = 2f;
+    public float daño = 2;
     public float rotSpeed = 0.5f;
     private bool isFollowing = true;
     void Update()
@@ -33,17 +34,17 @@ public class Enemigos : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            // other.gameObject.GetComponent<vidajugador>().TomarDaño(1);
+            other.gameObject.GetComponent<vidajugador>().TomarDaño(daño);
             gameObject.SetActive(false);
         }
     }
-    /* private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
      {
          if (other.gameObject.CompareTag("player"))
          {
-             other.gameObject.GetComponent<vidajugador>().TomarDaño(1);
+             other.gameObject.GetComponent<vidajugador>().TomarDaño(daño);
          }
-     }*/
+     }
 
     
 }
