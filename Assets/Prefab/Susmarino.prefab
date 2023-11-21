@@ -327,8 +327,7 @@ MonoBehaviour:
   objeto: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
   objetosCreados: []
   jugador: {fileID: 4462453539486844966}
-  enemigos:
-  - {fileID: 0}
+  enemigos: []
   radar: {fileID: 8241026633537504830}
   enemyIcon: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
   spawn: {fileID: 0}
