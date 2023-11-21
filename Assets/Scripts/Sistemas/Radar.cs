@@ -10,21 +10,21 @@ public class Radar : PoolManager
     [SerializeField] private GameObject enemyIcon;
     [SerializeField] private SpawnManager spawn;
 
-    [SerializeField] private List<Transform> enemyIcons;
+    [SerializeField] private List<GameObject> enemyIcons;
 
     [SerializeField] private float maxDistance;
     [SerializeField] private float radarScale;
 
     void Start()
     {
-        enemyIcons = new List<Transform>();
+        enemyIcons = new List<GameObject>();
         enemigos = new List<Transform>();
         enemigos.Clear();
         enemyIcons.Clear();
 
-        CreateEnemyIcons();
+        //CreateEnemyIcons();
     }
-    void Update()
+    void LateUpdate()
     {
         enemigos = spawn.totalEnemys;
         
@@ -34,15 +34,9 @@ public class Radar : PoolManager
     
     void CreateEnemyIcons()
     {
-        for (int i = 0; i < enemigos.Count; i++)
-        {
-            PedirObjetoHijo(radar);
-        }
-        
-        for (int i = 0; i < objetosCreados.Count; i++)
-        {
-            enemyIcons.Add(objetosCreados[i].transform);
-        }
+        enemyIcons.Clear();
+        PedirObjetoHijo(radar);
+        enemyIcons.AddRange(objetosCreados);
     }
     void UpdateRadarPos()
     {
@@ -50,7 +44,7 @@ public class Radar : PoolManager
         {
             Vector2 enemyPos = enemigos[i].position - jugador.position;
             Vector2 radarEnemyPos = RadarPosition(radarScale * enemyPos / maxDistance);
-            enemyIcons[i].localPosition = radarEnemyPos;
+            enemyIcons[i].transform.localPosition = radarEnemyPos;
             if (radarEnemyPos.magnitude> radarScale)
             {
                 enemyIcons[i].gameObject.SetActive(false);

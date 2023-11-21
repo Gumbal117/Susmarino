@@ -1099,6 +1099,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1318360453}
     - target: {fileID: 8081589566207595489, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
+      propertyPath: maxDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081589566207595489, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
       propertyPath: enemigos.Array.data[0]
       value: 
       objectReference: {fileID: 0}
