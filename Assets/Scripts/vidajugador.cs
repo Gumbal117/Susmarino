@@ -12,6 +12,10 @@ public class vidajugador : MonoBehaviour
         vida = vidaMáxima;
         barradevida.InicializarBarraDeVida(vida);
     }
+    private void Update()
+    {
+        barradevida.CambiarVidaActual(vida);
+    }
     public void TomarDaño (float daño)
         {
         vida -= daño;
