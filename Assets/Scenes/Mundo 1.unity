@@ -1040,9 +1040,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e015b676b6bbf648b510b53afcc00ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radar: {fileID: 0}
-  numEnemigos: 1
+  objeto: {fileID: 0}
+  objetosCreados: []
   enemys: []
+  enemigos: {fileID: 0}
+  tiempoEnemigos: 0
+  cantidadDeEnemigos: 0
+  cantidadDeEnemigosEnJuego: 0
+  esInfinito: 0
+  rotacion: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &1076520301
 Transform:
   m_ObjectHideFlags: 0

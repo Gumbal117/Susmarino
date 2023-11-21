@@ -2,25 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class Spawn : PoolManager
 {
-    public Radar radar;
-    public float numEnemigos;
-    public GameObject[] enemys;
-    // Start is called before the first frame update
-    void Start()
+    
+    
+    public List <Transform> enemys;
+    [SerializeField] private GameObject enemigos;
+    [SerializeField] public float tiempoEnemigos;
+    [SerializeField] public int cantidadDeEnemigos;
+    [SerializeField] public int cantidadDeEnemigosEnJuego;
+    [SerializeField] public bool esInfinito;
+    private float tiempoSigienteEnemigo;
+    public Quaternion rotacion;
+    private void Start()
     {
         
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        for (int i = 0; i < numEnemigos; i++)
+        if (esInfinito)
         {
-            //radar.AgregarEnemigo(gameobjectdelenemigo);
+            JuegoInfinito();
         }
-        
+        else
+        {
+            JuegoNormal();
+        }
+
     }
 
+    
+    public void JuegoNormal()
+    {
+        tiempoSigienteEnemigo += Time.deltaTime;
+        if (tiempoSigienteEnemigo >= tiempoEnemigos)
+        {
+            PedirObjeto();
+            tiempoSigienteEnemigo = 0;
+            cantidadDeEnemigosEnJuego++;
+        }
+        if (cantidadDeEnemigos == cantidadDeEnemigosEnJuego)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+    public void JuegoInfinito()
+    {
+        tiempoSigienteEnemigo += Time.deltaTime;
+        if (tiempoSigienteEnemigo >= tiempoEnemigos)
+        {
+            PedirObjeto();
+            tiempoSigienteEnemigo = 0;
+            
+            if (tiempoEnemigos > 1)
+            {
+                tiempoEnemigos -= 0.5f;
+            }
+
+        }
+        if (cantidadDeEnemigos == cantidadDeEnemigosEnJuego)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+    public override GameObject PedirObjeto()
+    {
+        GameObject Objeto = base.PedirObjeto();
+        Objeto.transform.position = transform.position;
+        Objeto.transform.rotation = transform.rotation;
+        Objeto.SetActive(true);
+        enemys.Add(Objeto.transform);
+
+        return Objeto;
+    }
 }

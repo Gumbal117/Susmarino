@@ -5,7 +5,7 @@ using UnityEngine;
 public class Radar : PoolManager
 {
     [SerializeField] private Transform jugador;
-    [SerializeField] private Transform[] enemigos;
+    [SerializeField] private List<Transform> enemigos;
     [SerializeField] private Transform radar;
     [SerializeField] private GameObject enemyIcon;
     [SerializeField] private Spawn spawn;
@@ -18,23 +18,23 @@ public class Radar : PoolManager
     void Start()
     {
         enemyIcons = new List<Transform>();
+        enemigos = new List<Transform>();
+
         CreateEnemyIcons();
     }
     void Update()
     {
-        for (int i = 0; i < spawn.numEnemigos; i++)
+        enemigos = spawn.enemys;
+        if (enemyIcons.Count != enemigos.Count)
         {
-
+            CreateEnemyIcons();
         }
         UpdateRadarPos();
     }
-    public void AgregarEnemigo(GameObject enemigoAAgragar)
-    {
-        enemyIcons.Add(enemigoAAgragar.transform);
-    }
+    
     void CreateEnemyIcons()
     {
-        for (int i = 0; i < enemigos.Length; i++)
+        for (int i = 0; i < enemigos.Count; i++)
         {
             PedirObjetoHijo(radar);
         }
@@ -46,7 +46,7 @@ public class Radar : PoolManager
     }
     void UpdateRadarPos()
     {
-        for (int i = 0; i < enemigos.Length; i++)
+        for (int i = 0; i < enemigos.Count; i++)
         {
             Vector2 enemyPos = enemigos[i].position - jugador.position;
             Vector2 radarEnemyPos = RadarPosition(radarScale * enemyPos / maxDistance);
