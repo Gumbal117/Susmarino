@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemigos : MonoBehaviour
 {
-    public string objectTag;
+    public GameObject jugador;
     public float speed = 2f;
     public float daño = 2;
     public float rotSpeed = 0.5f;
@@ -14,17 +14,17 @@ public class Enemigos : MonoBehaviour
         if (isFollowing)
         {
 
-            GameObject targetObject = GameObject.FindWithTag("Player");
+             jugador = GameObject.FindFirstObjectByType<vidajugador>().gameObject;
 
 
-            if (targetObject == null)
+            if (jugador == null)
             {
                 return;
             }
             
 
-            transform.position = Vector3.MoveTowards(transform.position, targetObject.transform.position, speed * Time.deltaTime);
-            Vector3 mirarA = targetObject.transform.position - transform.position;
+            transform.position = Vector3.MoveTowards(transform.position, jugador.transform.position, speed * Time.deltaTime);
+            Vector3 mirarA = jugador.transform.position - transform.position;
             transform.up = mirarA;
 
         }
@@ -32,7 +32,7 @@ public class Enemigos : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.GetComponent<vidajugador>() != null)
         {
             other.gameObject.GetComponent<vidajugador>().TomarDaño(daño);
             gameObject.SetActive(false);
@@ -40,7 +40,7 @@ public class Enemigos : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
      {
-         if (other.gameObject.CompareTag("player"))
+         if (other.gameObject.GetComponent<vidajugador>() != null)
          {
              other.gameObject.GetComponent<vidajugador>().TomarDaño(daño);
          }
