@@ -20,12 +20,12 @@ public class Enemigos : MonoBehaviour
             {
                 return;
             }
-
+            
 
             transform.position = Vector3.MoveTowards(transform.position, targetObject.transform.position, speed * Time.deltaTime);
+            Vector3 mirarA = targetObject.transform.position - transform.position;
+            transform.up = mirarA;
 
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetObject.transform.position - transform.position), rotSpeed * Time.deltaTime);
         }
     }
 
