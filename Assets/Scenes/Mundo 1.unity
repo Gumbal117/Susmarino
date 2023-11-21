@@ -191,6 +191,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!1 &217264942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 217264943}
+  - component: {fileID: 217264944}
+  m_Layer: 0
+  m_Name: Radar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &217264943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217264942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 916465903}
+  m_Father: {fileID: 1122344845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217264944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217264942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef63f78e755ee945be940e7aab1e820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
+  objetosCreados: []
+  jugador: {fileID: 1122344845}
+  enemigos:
+  - {fileID: 0}
+  radar: {fileID: 916465903}
+  enemyIcon: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
+  spawn: {fileID: 1076520300}
+  enemyIcons: []
+  maxDistance: 80
+  radarScale: 2
+>>>>>>> Stashed changes
 --- !u!1 &255291630
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +630,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1076520301}
   - component: {fileID: 1076520300}
+  - component: {fileID: 1076520303}
+  - component: {fileID: 1076520302}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -590,15 +651,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e015b676b6bbf648b510b53afcc00ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objeto: {fileID: 0}
+  objeto: {fileID: 2896296135454703340, guid: eb4338d087fe5ab4ca4b7dd5ab03b198, type: 3}
   objetosCreados: []
   enemys: []
-  enemigos: {fileID: 0}
-  tiempoEnemigos: 0
-  cantidadDeEnemigos: 0
-  cantidadDeEnemigosEnJuego: 0
-  esInfinito: 0
-  rotacion: {x: 0, y: 0, z: 0, w: 0}
+  enemigos: {fileID: 2896296135454703340, guid: eb4338d087fe5ab4ca4b7dd5ab03b198, type: 3}
+  tiempoEnemigos: 10
 --- !u!4 &1076520301
 Transform:
   m_ObjectHideFlags: 0
@@ -611,10 +668,150 @@ Transform:
   m_LocalPosition: {x: -9.09925, y: -8.256455, z: -0.026516557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1541480120}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1076520302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076520299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e015b676b6bbf648b510b53afcc00ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 810694927077607626, guid: c3ea71f76a85d864b996d97b42adac5c, type: 3}
+  objetosCreados: []
+  enemys: []
+  enemigos: {fileID: 810694927077607626, guid: c3ea71f76a85d864b996d97b42adac5c, type: 3}
+  tiempoEnemigos: 10
+--- !u!114 &1076520303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076520299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e015b676b6bbf648b510b53afcc00ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 118674258030322002, guid: 890a6ce95c1ecd94fa1a9071f237a973, type: 3}
+  objetosCreados: []
+  enemys: []
+  enemigos: {fileID: 118674258030322002, guid: 890a6ce95c1ecd94fa1a9071f237a973, type: 3}
+  tiempoEnemigos: 10
+--- !u!1 &1122344844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122344845}
+  - component: {fileID: 1122344847}
+  - component: {fileID: 1122344846}
+  - component: {fileID: 1122344848}
+  m_Layer: 0
+  m_Name: Susmarino
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1122344845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122344844}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 519420032}
+  - {fileID: 711416611}
+  - {fileID: 1625449946}
+  - {fileID: 1379884952}
+  - {fileID: 343547350}
+  - {fileID: 217264943}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1122344846
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122344844}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009082139, y: 0.086280525}
+  m_Size: {x: 0.86328626, y: 1.3723685}
+  m_Direction: 0
+--- !u!114 &1122344847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122344844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98ac55154befb147a82b957a75312eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadDeGiro: 100
+  velocidadDeMov: 5
+--- !u!114 &1122344848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122344844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a716a6226baf61a4dba5ce82451057c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  "vidaM\xE1xima": 10
+  barradevida: {fileID: 1336912044}
+>>>>>>> Stashed changes
 --- !u!1 &1336912040
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +914,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1336912043}
+<<<<<<< Updated upstream
 --- !u!1 &1541480117
+=======
+--- !u!1 &1379884949
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -725,6 +926,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1541480120}
   - component: {fileID: 1541480119}
   - component: {fileID: 1541480118}
@@ -733,21 +935,40 @@ GameObject:
   m_Layer: 0
   m_Name: pixil-frame-0 (3)_0
   m_TagString: Enemy
+=======
+  - component: {fileID: 1379884952}
+  - component: {fileID: 1379884951}
+  - component: {fileID: 1379884950}
+  m_Layer: 0
+  m_Name: submarino}_0
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!95 &1541480118
+=======
+--- !u!95 &1379884950
+>>>>>>> Stashed changes
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1541480117}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2bc50d3dfc8d74443a45bd3e44fbad58, type: 2}
+=======
+  m_GameObject: {fileID: 1379884949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcb84c27d1008264495137b08139293b, type: 2}
+>>>>>>> Stashed changes
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -758,13 +979,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!212 &1541480119
+=======
+--- !u!212 &1379884951
+>>>>>>> Stashed changes
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1541480117}
+=======
+  m_GameObject: {fileID: 1379884949}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -798,24 +1027,38 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 1
   m_Sprite: {fileID: 701312636, guid: 4d55103df58d2a548be0f8b8dcce4e7d, type: 3}
+=======
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -1897204446, guid: 7f3e2808bf0e7ea4894baa1820627871, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< Updated upstream
   m_Size: {x: 1.8, y: 2.6}
+=======
+  m_Size: {x: 0.32, y: 0.26}
+>>>>>>> Stashed changes
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!4 &1541480120
+=======
+--- !u!4 &1379884952
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1541480117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -876,6 +1119,17 @@ MonoBehaviour:
   speed: 2
   "da\xF1o": 3
   rotSpeed: 0
+=======
+  m_GameObject: {fileID: 1379884949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1122344845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+>>>>>>> Stashed changes
 --- !u!1 &1544737436
 GameObject:
   m_ObjectHideFlags: 0
