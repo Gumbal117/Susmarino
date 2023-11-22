@@ -4,39 +4,49 @@ using UnityEngine;
 
 public class Radar : PoolManager
 {
+   
     [SerializeField] private Transform jugador;
     [SerializeField] private List<Transform> enemigos;
     [SerializeField] private Transform radar;
     [SerializeField] private GameObject enemyIcon;
     [SerializeField] private SpawnManager spawn;
 
-    [SerializeField] private List<GameObject> enemyIcons;
+  
 
     [SerializeField] private float maxDistance;
     [SerializeField] private float radarScale;
 
+   
     void Start()
     {
-        enemyIcons = new List<GameObject>();
+        
         enemigos = new List<Transform>();
         enemigos.Clear();
-        enemyIcons.Clear();
+       
 
-        //CreateEnemyIcons();
+      
     }
-    void LateUpdate()
+    void Update()
     {
         enemigos = spawn.totalEnemys;
+
         
         
+        CreateEnemyIcons();
+
         UpdateRadarPos();
     }
     
-    void CreateEnemyIcons()
+    public void CreateEnemyIcons()
     {
-        enemyIcons.Clear();
-        PedirObjetoHijo(radar);
-        enemyIcons.AddRange(objetosCreados);
+            objetosCreados.Clear();
+
+        for (int i = 0; i < enemigos.Count; i++)
+        {
+
+            PedirObjetoHijo(radar);
+        }
+        
     }
     void UpdateRadarPos()
     {
@@ -44,14 +54,14 @@ public class Radar : PoolManager
         {
             Vector2 enemyPos = enemigos[i].position - jugador.position;
             Vector2 radarEnemyPos = RadarPosition(radarScale * enemyPos / maxDistance);
-            enemyIcons[i].transform.localPosition = radarEnemyPos;
+            objetosCreados[i].transform.localPosition = radarEnemyPos;
             if (radarEnemyPos.magnitude> radarScale)
             {
-                enemyIcons[i].gameObject.SetActive(false);
+                objetosCreados[i].gameObject.SetActive(false);
             }
             else
             {
-                enemyIcons[i].gameObject.SetActive(true);
+                objetosCreados[i].gameObject.SetActive(true);
             }
         }
     }

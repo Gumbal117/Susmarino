@@ -457,10 +457,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1980, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -544,7 +544,9 @@ MonoBehaviour:
   objetosCreados: []
   enemys: []
   enemigos: {fileID: 118674258030322002, guid: 890a6ce95c1ecd94fa1a9071f237a973, type: 3}
-  tiempoEnemigos: 1
+  tiempoEnemigos: 2
+  tiempoEnemigosMax: 30
+  tiempoEnemigosMin: 5
 --- !u!4 &718620209
 Transform:
   m_ObjectHideFlags: 0
@@ -643,7 +645,9 @@ MonoBehaviour:
   objetosCreados: []
   enemys: []
   enemigos: {fileID: 2896296135454703340, guid: eb4338d087fe5ab4ca4b7dd5ab03b198, type: 3}
-  tiempoEnemigos: 1
+  tiempoEnemigos: 2
+  tiempoEnemigosMax: 30
+  tiempoEnemigosMin: 5
 --- !u!4 &1076520301
 Transform:
   m_ObjectHideFlags: 0
@@ -692,7 +696,9 @@ MonoBehaviour:
   objetosCreados: []
   enemys: []
   enemigos: {fileID: 810694927077607626, guid: c3ea71f76a85d864b996d97b42adac5c, type: 3}
-  tiempoEnemigos: 1
+  tiempoEnemigos: 2
+  tiempoEnemigosMax: 30
+  tiempoEnemigosMin: 5
 --- !u!4 &1165569644
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,6 +1111,10 @@ PrefabInstance:
     - target: {fileID: 8081589566207595489, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
       propertyPath: maxDistance
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081589566207595489, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
+      propertyPath: enemigos.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8081589566207595489, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
       propertyPath: enemigos.Array.data[0]
