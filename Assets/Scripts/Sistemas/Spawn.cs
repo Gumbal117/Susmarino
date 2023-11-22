@@ -9,6 +9,8 @@ public class Spawn : PoolManager
     public List <Transform> enemys;
     [SerializeField] private GameObject enemigos;
     [SerializeField] public float tiempoEnemigos;
+    [SerializeField] public float tiempoEnemigosMax;
+    [SerializeField] public float tiempoEnemigosMin;
     private float tiempoSigienteEnemigo;
     
    
@@ -21,12 +23,16 @@ public class Spawn : PoolManager
         tiempoSigienteEnemigo += Time.deltaTime;
         if (tiempoSigienteEnemigo >= tiempoEnemigos)
         {
+
+
             PedirObjeto();
+            tiempoEnemigos = Random.Range(tiempoEnemigosMin, tiempoEnemigosMax);
             tiempoSigienteEnemigo = 0;
             
-            if (tiempoEnemigos > 1)
+            if (tiempoEnemigosMin > 1)
             {
-                tiempoEnemigos -= 0.5f;
+                tiempoEnemigosMin -= 0.5f;
+                tiempoEnemigosMax -= 0.5f;
             }
 
         }
@@ -36,7 +42,7 @@ public class Spawn : PoolManager
     {
         GameObject Objeto = base.PedirObjeto();
         
-        Vector2 pos= new Vector2 (Random.Range(-50, 50), Random.Range(-50, 50));
+        Vector2 pos= new Vector2 (Random.Range(-100, 100), Random.Range(-100, 100));
         Objeto.transform.position = pos;
         Objeto.transform.rotation = transform.rotation;
         Objeto.SetActive(true);
