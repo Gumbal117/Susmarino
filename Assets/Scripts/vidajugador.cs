@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class vidajugador : MonoBehaviour
 {
     [SerializeField] private float vida;
     [SerializeField] private float vidaMáxima=3;
     [SerializeField] private BarraDeVida barradevida;
+    public bool pasarNivel;
+    public int indiceNivel;
     private void Start()
     {
         vida = vidaMáxima;
@@ -15,15 +19,17 @@ public class vidajugador : MonoBehaviour
     private void Update()
     {
         barradevida.CambiarVidaActual(vida);
+        if (vida <= 0)
+        {
+           
+            CambiarNivel(indiceNivel);
+        }
     }
     public void TomarDaño (float daño)
         {
         vida -= daño;
         barradevida.CambiarVidaActual(vida);
-        if (vida==0)
-        {
-            gameObject.SetActive(false);
-        }
+        
         
         }
     public void RecibirVida(float daño)
@@ -34,6 +40,10 @@ public class vidajugador : MonoBehaviour
         {
             vida = vidaMáxima;
         }
+    }
+    public void CambiarNivel(int indice)
+    {
+        SceneManager.LoadScene(indice);
     }
    
 }

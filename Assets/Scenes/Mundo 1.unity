@@ -1054,6 +1054,10 @@ PrefabInstance:
       propertyPath: barradevida
       value: 
       objectReference: {fileID: 1336912044}
+    - target: {fileID: 1174134330693930778, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
+      propertyPath: indiceNivel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4462453539486844966, guid: eda035e713a0c884f89f6eb39dcec3e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
