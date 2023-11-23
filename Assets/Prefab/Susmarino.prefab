@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4411342224515414979}
   - component: {fileID: 5898679077944737339}
   - component: {fileID: 1174134330693930778}
+  - component: {fileID: 5055242390075197710}
   m_Layer: 0
   m_Name: Susmarino
   m_TagString: Player
@@ -104,6 +105,35 @@ MonoBehaviour:
   vida: 0
   "vidaM\xE1xima": 10
   barradevida: {fileID: 0}
+  pasarNivel: 0
+  indiceNivel: 0
+--- !u!50 &5055242390075197710
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332352985884789758}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &486705664968755085
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +361,6 @@ MonoBehaviour:
   radar: {fileID: 8241026633537504830}
   enemyIcon: {fileID: 7712074794927305732, guid: 367558f2755073446a792ad736a059c6, type: 3}
   spawn: {fileID: 0}
-  enemyIcons: []
   maxDistance: 80
   radarScale: 2
 --- !u!1 &2059643311817543749

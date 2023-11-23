@@ -29,8 +29,7 @@ public class Enemigos : MonoBehaviour
 
         }
     }
-
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<vidajugador>() != null)
         {
@@ -38,7 +37,8 @@ public class Enemigos : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    private void OnCollisionEnter(Collision other)
+
+    private void OnCollisionEnter2D(Collision2D other)
      {
          if (other.gameObject.GetComponent<vidajugador>() != null)
          {
