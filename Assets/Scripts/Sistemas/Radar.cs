@@ -19,19 +19,12 @@ public class Radar : PoolManager
    
     void Start()
     {
-        
         enemigos = new List<Transform>();
         enemigos.Clear();
-       
-
-      
     }
     void Update()
     {
         enemigos = spawn.totalEnemys;
-
-        
-        
         CreateEnemyIcons();
 
         UpdateRadarPos();
@@ -55,7 +48,7 @@ public class Radar : PoolManager
             Vector2 enemyPos = enemigos[i].position - jugador.position;
             Vector2 radarEnemyPos = RadarPosition(radarScale * enemyPos / maxDistance);
             objetosCreados[i].transform.localPosition = radarEnemyPos;
-            if (radarEnemyPos.magnitude> radarScale)
+            if (radarEnemyPos.magnitude > radarScale || !enemigos[i].gameObject.activeSelf)
             {
                 objetosCreados[i].gameObject.SetActive(false);
             }

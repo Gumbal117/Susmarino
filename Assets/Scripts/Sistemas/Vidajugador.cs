@@ -4,7 +4,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class vidajugador : MonoBehaviour
+public class Vidajugador : MonoBehaviour
 {
     [SerializeField] private float vida;
     [SerializeField] private float vidaMáxima=3;

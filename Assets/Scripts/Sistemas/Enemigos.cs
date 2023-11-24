@@ -14,7 +14,7 @@ public class Enemigos : MonoBehaviour
         if (isFollowing)
         {
 
-             jugador = GameObject.FindFirstObjectByType<vidajugador>().gameObject;
+             jugador = GameObject.FindFirstObjectByType<Vidajugador>().gameObject;
 
 
             if (jugador == null)
@@ -31,18 +31,18 @@ public class Enemigos : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<vidajugador>() != null)
+        if (other.GetComponent<Vidajugador>() != null)
         {
-            other.gameObject.GetComponent<vidajugador>().TomarDaño(daño);
+            other.gameObject.GetComponent<Vidajugador>().TomarDaño(daño);
             gameObject.SetActive(false);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
      {
-         if (other.gameObject.GetComponent<vidajugador>() != null)
+         if (other.gameObject.GetComponent<Vidajugador>() != null)
          {
-             other.gameObject.GetComponent<vidajugador>().TomarDaño(daño);
+             other.gameObject.GetComponent<Vidajugador>().TomarDaño(daño);
          }
      }
 
