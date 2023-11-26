@@ -25,21 +25,35 @@ public class Radar : PoolManager
     void Update()
     {
         enemigos = spawn.totalEnemys;
-        CreateEnemyIcons();
+        if (enemigos.Count!=objetosCreados.Count)
+        {
+            
+            CreateEnemyIcons();
 
-        UpdateRadarPos();
+        }
+        else
+        {
+
+            UpdateRadarPos();
+            
+        }
     }
     
     public void CreateEnemyIcons()
     {
-            objetosCreados.Clear();
-
+        
         for (int i = 0; i < enemigos.Count; i++)
         {
+            if (i < objetosCreados.Count)
+            {
+
+                objetosCreados[i].gameObject.SetActive(false);
+            }
 
             PedirObjetoHijo(radar);
+
         }
-        
+        Debug.Log("Se crearon los iconos") ;
     }
     void UpdateRadarPos()
     {
@@ -57,6 +71,7 @@ public class Radar : PoolManager
                 objetosCreados[i].gameObject.SetActive(true);
             }
         }
+        Debug.Log("Se esta siguiendo al enemigo");
     }
     Vector2 RadarPosition(Vector2 position)
     {
