@@ -17,8 +17,7 @@ public class Vidaenemigos : MonoBehaviour
     {
         if (vida <= 0)
         {
-
-           gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
     public void TomarDaño(float daño)
