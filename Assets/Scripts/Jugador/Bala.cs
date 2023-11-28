@@ -21,7 +21,7 @@ public class Bala : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
-        if (gameObject != null) 
+        if (gameObject.activeInHierarchy) 
         {
             StartCoroutine(TiempoDeDesaparecer());
         }

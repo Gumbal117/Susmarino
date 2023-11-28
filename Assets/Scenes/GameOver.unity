@@ -1762,6 +1762,7 @@ GameObject:
   - component: {fileID: 5898679077669232057}
   - component: {fileID: 1174134329894644888}
   - component: {fileID: 987166797}
+  - component: {fileID: 5898679077669232058}
   m_Layer: 0
   m_Name: Susmarino
   m_TagString: Player
@@ -1822,6 +1823,9 @@ MonoBehaviour:
   cooldown: 0
   jugador: {fileID: 4462453539752389540}
   kya: 101
+  botonDelArma: 2
+  arduino: 1
+  movArduino: {fileID: 5898679077669232058}
 --- !u!1 &1632541157664447063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,6 +1930,9 @@ MonoBehaviour:
   cooldown: 0
   jugador: {fileID: 4462453539752389540}
   kya: 113
+  botonDelArma: 1
+  arduino: 1
+  movArduino: {fileID: 5898679077669232058}
 --- !u!1 &3289547984526022409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1970,9 @@ MonoBehaviour:
   cooldown: 0
   jugador: {fileID: 4462453539752389540}
   kya: 32
+  botonDelArma: 0
+  arduino: 1
+  movArduino: {fileID: 5898679077669232058}
 --- !u!114 &4226083571211629824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,6 +2037,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadDeGiro: 100
   velocidadDeMov: 5
+  velocidadDeGiroARD: 5
+  velocidadDeMovARD: 0.1
+  arduino: 1
+  movArduino: {fileID: 0}
 --- !u!4 &4462453539752389540
 Transform:
   m_ObjectHideFlags: 0
@@ -2098,6 +2112,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.009082139, y: 0.086280525}
   m_Size: {x: 0.86328626, y: 1.3723685}
   m_Direction: 0
+--- !u!114 &5898679077669232058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332352986155608188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7e565c90ab62643a59a53ac67a4983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potenc1: 0
+  potenc2: 0
+  btn1: 0
+  btn2: 0
+  btn3: 0
 --- !u!114 &7002326723240763924
 MonoBehaviour:
   m_ObjectHideFlags: 0

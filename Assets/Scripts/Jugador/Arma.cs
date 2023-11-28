@@ -11,21 +11,74 @@ public class Arma : PoolManager
     public float cooldown;
     [SerializeField] Transform jugador;
     [SerializeField] KeyCode kya;
+    public enum EnumBotonDelArma { Balas, Bombas, Bengalas }
+
+    [SerializeField] public EnumBotonDelArma botonDelArma;
+    [SerializeField] private bool arduino;
+    public MovArduinoSubmarino movArduino;
+
 
     private void Awake()
     {
         ultimoDisparo = Time.time;
+        //movArduino = GetComponent<MovArduinoSubmarino>();
+
     }
     void Update()
     {
         //Disparar
-        if (Input.GetKey(kya)) /////////////////////////////////////////////////////////////////
+        
+        if (arduino)
         {
-            if (ultimoDisparo < Time.time)
+            switch (botonDelArma)
             {
-                ultimoDisparo = Time.time + cadencia;
-                PedirObjeto();
-                cooldown = 0;
+                case EnumBotonDelArma.Balas:
+                    if (movArduino.btn1==1) /////////////////////////////////////////////////////////////////
+                    {
+                        if (ultimoDisparo < Time.time)
+                        {
+                            ultimoDisparo = Time.time + cadencia;
+                            PedirObjeto();
+                            cooldown = 0;
+                        }
+                    }
+                    break;
+                case EnumBotonDelArma.Bombas:
+                    if (movArduino.btn2 == 1) /////////////////////////////////////////////////////////////////
+                    {
+                        if (ultimoDisparo < Time.time)
+                        {
+                            ultimoDisparo = Time.time + cadencia;
+                            PedirObjeto();
+                            cooldown = 0;
+                        }
+                    }
+                    break;
+                case EnumBotonDelArma.Bengalas:
+                    if (movArduino.btn3 == 1) /////////////////////////////////////////////////////////////////
+                    {
+                        if (ultimoDisparo < Time.time)
+                        {
+                            ultimoDisparo = Time.time + cadencia;
+                            PedirObjeto();
+                            cooldown = 0;
+                        }
+                    }
+                    break;
+                
+            }
+
+        }
+        else
+        {
+            if (Input.GetKey(kya)) /////////////////////////////////////////////////////////////////
+            {
+                if (ultimoDisparo < Time.time)
+                {
+                    ultimoDisparo = Time.time + cadencia;
+                    PedirObjeto();
+                    cooldown = 0;
+                }
             }
         }
 
@@ -44,3 +97,6 @@ public class Arma : PoolManager
     }
     
 }
+
+
+
