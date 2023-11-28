@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 0}
-  speed: 4.5
+  speed: 2.5
   "da\xF1o": 1
   rotSpeed: 0.5
 --- !u!70 &1990560396399830131
