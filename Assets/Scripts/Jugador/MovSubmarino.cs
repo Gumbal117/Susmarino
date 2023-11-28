@@ -21,12 +21,16 @@ public class MovSubmarino : MonoBehaviour
     private void Awake()
     {
         movArduino = GetComponent<MovArduinoSubmarino>();
+        arduino = GameManager.instance.ard;
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        arduino = GameManager.instance.ard;
+
         if (arduino)
         {
             vGiro = movArduino.potenc1 * Time.deltaTime * velocidadDeGiroARD;

@@ -23,11 +23,14 @@ public class Arma : PoolManager
         ultimoDisparo = Time.time;
         //movArduino = GetComponent<MovArduinoSubmarino>();
 
+        arduino = GameManager.instance.ard;
+
     }
     void Update()
     {
         //Disparar
-        
+        arduino = GameManager.instance.ard;
+
         if (arduino)
         {
             switch (botonDelArma)
