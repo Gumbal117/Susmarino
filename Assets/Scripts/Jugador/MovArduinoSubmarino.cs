@@ -24,21 +24,22 @@ public class MovArduinoSubmarino : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (serialPort == null)
+        if (serialPort == null && SerialPort.GetPortNames()!= null)
         {
             serialPort = new SerialPort(SerialPort.GetPortNames()[0], 9600);
+            serialPort.Open();
         }
         else
         {
             return;
         }
-        serialPort.Open();
+        
 
     }
 
     void Update()
     {
-
+        if (serialPort == null) return;
         if (serialPort.IsOpen)
         {
             try
